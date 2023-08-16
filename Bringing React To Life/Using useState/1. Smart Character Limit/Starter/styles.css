@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+}
+
+form {
+  display: grid;
+  gap: 8px;
+}
+
+form div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+span {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.error {
+  color: var(--red);
+}
+
+.no-error {
+  color: var(--beige);
+}
