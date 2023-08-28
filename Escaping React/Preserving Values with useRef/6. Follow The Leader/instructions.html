@@ -1,0 +1,29 @@
+The concept is simple – using the given animateBox function, animate the box to the coordinates that the user clicks.
+
+As shown in utils.js, the animateBox function accepts an object with the following properties.
+
+box - a reference to the box element
+startX - the current x position of the box
+startY - the current y position of the box
+targetX - the x position of the click event minus half the width of the box
+targetY - the y position of the click event minus half the height of the box
+function animateBox({ box, startX, startY, targetX, targetY }) {
+  const distanceX = targetX - startX;
+  const distanceY = targetY - startY;
+  const frames = 30;
+  let currentFrame = 0;
+
+  const animate = () => {
+    if (currentFrame <= frames) {
+      const newX = startX + (distanceX * currentFrame) / frames;
+      const newY = startY + (distanceY * currentFrame) / frames;
+      box.style.transform = `translate(${newX}px, ${newY}px)`;
+      currentFrame++;
+      requestAnimationFrame(animate);
+    }
+  };
+
+  animate();
+}
+TASKS
+Animate the box to the coordinates that the user clicks
